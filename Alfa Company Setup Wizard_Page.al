@@ -325,8 +325,7 @@ page 70140951 "Alfa Company Setup Wizard"
                     AlfaLicense: Record "Alfa License";
                 begin
                     IF CurrentStep = 2 THEN
-                        IF AlfaLicense.CheckLicense(ProductId, LicenseKey) THEN
-                            AlfaLicense.ImportLicense(ProductId, LicenseKey, CustomerName, ProductDesc);
+                        AlfaLicense.CheckLicense(ProductId, LicenseKey);
                     If CurrentStep = 3 THEN
                         ValidateCompanyInfo();
                     TakeStep(1);
@@ -342,13 +341,12 @@ page 70140951 "Alfa Company Setup Wizard"
                 Enabled = ActionFinishAllowed;
 
                 trigger OnAction()
-                var
+                Var
                     AlfaLicense: Record "Alfa License";
                 begin
                     CurrPage.Close();
                     AssistedSetup.SetStatus(Page::"Alfa Company Setup Wizard", AssistedSetup.Status::Completed);
-                    AlfaLicense.Get(ProductId);
-                    AlfaLicense.Validate("No. of Legal Entity Remaining");
+                    AlfaLicense.ImportLicense(ProductId, LicenseKey, CustomerName, ProductDesc);
                     Commit();
                     AssistedSetup.Get(70140953);
                     AssistedSetup.run;
@@ -368,6 +366,8 @@ page 70140951 "Alfa Company Setup Wizard"
             INSERT;
         END;
         GetCompanyInfo;
+        IF AlfaLicInfo.Get(ProductId) THEN
+            LicenseKey := AlfaLicInfo."License Key";
         CurrentStep := 1;
         SetControls();
     end;
@@ -403,7 +403,8 @@ page 70140951 "Alfa Company Setup Wizard"
         IF Companyinfo.Get then BEGIN
             Rec.TransferFields(Companyinfo);
             Rec.Modify();
-        end;
+        end Else
+            Rec.Name := CompanyName();
     End;
 
     local procedure LoadTopBanners()
@@ -452,5 +453,5 @@ page 70140951 "Alfa Company Setup Wizard"
         CustomerName: Text[100];
         ProductId: Label 'ALFA100002';
         ProductDesc: Label 'Company Configuration Wizard';
-
+        AlfaLicInfo: Record "Alfa License";
 }

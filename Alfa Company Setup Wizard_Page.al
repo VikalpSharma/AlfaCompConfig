@@ -288,7 +288,7 @@ page 70140951 "Alfa Company Setup Wizard"
                         Error(Text003);
                 end;
             }
-            action("Configuration Worksheet")
+            /*action("Configuration Worksheet")
             {
                 ApplicationArea = All;
                 Caption = 'Configuration Worksheet';
@@ -297,7 +297,7 @@ page 70140951 "Alfa Company Setup Wizard"
                 Image = SetupLines;
                 RunObject = Page "Config. Worksheet";
                 ToolTip = 'Plan and configure how to initialize a new solution based on legacy data and the customers requirements.';
-            }
+            }*/
             action(ActionBack)
             {
                 ApplicationArea = All;

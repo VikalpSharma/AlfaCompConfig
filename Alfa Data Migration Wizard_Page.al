@@ -471,7 +471,7 @@ page 70140953 "Alfa Data Migration Wizard"
                 var
                     AssistedSetup: Record "Assisted Setup";
                 begin
-                    AssistedSetup.SetStatus(PAGE::"Data Migration Wizard", AssistedSetup.Status::Completed);
+                    AssistedSetup.SetStatus(PAGE::"Alfa Data Migration Wizard", AssistedSetup.Status::Completed);
                     CurrPage.CLOSE;
                     IF ShowOverviewPage THEN
                         PAGE.RUN(PAGE::"Data Migration Overview");

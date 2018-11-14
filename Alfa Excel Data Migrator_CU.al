@@ -197,17 +197,22 @@ codeunit 70140953 "Alfa Excel Data Migrator"
         InsertPackageField(DATABASE::Customer, 2, 2);     // Name
         InsertPackageField(DATABASE::Customer, 3, 3);     // Search Name
         InsertPackageField(DATABASE::Customer, 5, 4);     // Address
-        InsertPackageField(DATABASE::Customer, 7, 5);     // City
-        InsertPackageField(DATABASE::Customer, 92, 6);    // County
-        InsertPackageField(DATABASE::Customer, 91, 7);    // Post Code
-        InsertPackageField(DATABASE::Customer, 35, 8);    // Country/Region Code
-        InsertPackageField(DATABASE::Customer, 8, 9);     // Contact
-        InsertPackageField(DATABASE::Customer, 9, 10);    // Phone No.
-        InsertPackageField(DATABASE::Customer, 102, 11);  // E-Mail
-        InsertPackageField(DATABASE::Customer, 20, 12);   // Credit Limit (LCY)
-        InsertPackageField(DATABASE::Customer, 21, 13);   // Customer Posting Group
-        InsertPackageField(DATABASE::Customer, 27, 14);   // Payment Terms Code
-        InsertPackageField(DATABASE::Customer, 88, 15);   // Gen. Bus. Posting Group
+        InsertPackageField(DATABASE::Customer, 6, 5);     // Address
+        InsertPackageField(DATABASE::Customer, 7, 6);     // City
+        InsertPackageField(DATABASE::Customer, 22, 7);    // Currency Code
+        InsertPackageField(DATABASE::Customer, 91, 8);    // Post Code
+        InsertPackageField(DATABASE::Customer, 35, 9);    // Country/Region Code
+        InsertPackageField(DATABASE::Customer, 8, 10);    // Contact
+        InsertPackageField(DATABASE::Customer, 9, 11);    // Phone No.
+        InsertPackageField(DATABASE::Customer, 102, 12);  // E-Mail
+        InsertPackageField(DATABASE::Customer, 20, 13);   // Credit Limit (LCY)
+        InsertPackageField(DATABASE::Customer, 21, 14);   // Customer Posting Group
+        InsertPackageField(DATABASE::Customer, 27, 15);   // Payment Terms Code
+        InsertPackageField(DATABASE::Customer, 88, 16);   // Gen. Bus. Posting Group
+        InsertPackageField(Database::Customer, 86, 17);   // VAT Registration No.
+        InsertPackageField(Database::Customer, 110, 18);  // VAT Bus. Posting Group.
+        InsertPackageField(Database::Customer, 16, 19);   // Global Dimension 1 Code
+        InsertPackageField(Database::Customer, 17, 20);   // Global Dimension 2 Code   
     end;
 
     local procedure InsertPackageTableVendor(var DataMigrationSetup: Record "Data Migration Setup")
@@ -234,16 +239,23 @@ codeunit 70140953 "Alfa Excel Data Migrator"
         InsertPackageField(DATABASE::Vendor, 2, 2);     // Name
         InsertPackageField(DATABASE::Vendor, 3, 3);     // Search Name
         InsertPackageField(DATABASE::Vendor, 5, 4);     // Address
-        InsertPackageField(DATABASE::Vendor, 7, 5);     // City
-        InsertPackageField(DATABASE::Vendor, 92, 6);    // County
-        InsertPackageField(DATABASE::Vendor, 91, 7);    // Post Code
-        InsertPackageField(DATABASE::Vendor, 35, 8);    // Country/Region Code
-        InsertPackageField(DATABASE::Vendor, 8, 9);     // Contact
-        InsertPackageField(DATABASE::Vendor, 9, 10);    // Phone No.
-        InsertPackageField(DATABASE::Vendor, 102, 11);  // E-Mail
-        InsertPackageField(DATABASE::Vendor, 21, 12);   // Vendor Posting Group
-        InsertPackageField(DATABASE::Vendor, 27, 13);   // Payment Terms Code
-        InsertPackageField(DATABASE::Vendor, 88, 14);   // Gen. Bus. Posting Group
+        InsertPackageField(DATABASE::Vendor, 6, 5);     // Address 2
+        InsertPackageField(DATABASE::Vendor, 7, 6);     // City
+        InsertPackageField(DATABASE::Vendor, 22, 7);    // Currency Code
+        InsertPackageField(DATABASE::Vendor, 91, 8);    // Post Code
+        InsertPackageField(DATABASE::Vendor, 35, 9);    // Country/Region Code
+        InsertPackageField(DATABASE::Vendor, 8, 10);    // Contact
+        InsertPackageField(DATABASE::Vendor, 9, 11);    // Phone No.
+        InsertPackageField(DATABASE::Vendor, 102, 12);  // E-Mail
+        InsertPackageField(DATABASE::Vendor, 21, 13);   // Vendor Posting Group
+        InsertPackageField(DATABASE::Vendor, 27, 14);   // Payment Terms Code
+        InsertPackageField(DATABASE::Vendor, 88, 15);   // Gen. Bus. Posting Group
+        InsertPackageField(Database::Vendor, 86, 16);   // VAT Registration No.
+        InsertPackageField(Database::Vendor, 110, 17);  // VAT Bus. Posting Group
+        InsertPackageField(Database::Vendor, 16, 18);   // Global Dimension 1 Code
+        InsertPackageField(Database::Vendor, 17, 19);   // Global Dimension 1 Code
+        InsertPackageField(Database::Vendor, 30, 20);   // Shipment Method Code
+        InsertPackageField(Database::Vendor, 31, 21);   // Shipping Agent Code
     end;
 
     local procedure InsertPackageTableItem(var DataMigrationSetup: Record "Data Migration Setup")
@@ -273,17 +285,18 @@ codeunit 70140953 "Alfa Excel Data Migrator"
         InsertPackageField(DATABASE::Item, 18, 5);    // Unit Price
         InsertPackageField(DATABASE::Item, 22, 6);    // Unit Cost
         InsertPackageField(DATABASE::Item, 24, 7);    // Standard Cost
-        InsertPackageField(DATABASE::Item, 68, 8);    // Inventory
-        InsertPackageField(DATABASE::Item, 35, 9);    // Maximum Inventory
-        InsertPackageField(DATABASE::Item, 121, 10);  // Prevent Negative Inventory
-        InsertPackageField(DATABASE::Item, 34, 11);   // Reorder Point
-        InsertPackageField(DATABASE::Item, 36, 12);   // Reorder Quantity
-        InsertPackageField(DATABASE::Item, 38, 13);   // Unit List Price
-        InsertPackageField(DATABASE::Item, 41, 14);   // Gross Weight
-        InsertPackageField(DATABASE::Item, 42, 15);   // Net Weight
-        InsertPackageField(DATABASE::Item, 5411, 16); // Minimum Order Quantity
-        InsertPackageField(DATABASE::Item, 5412, 17); // Maximum Order Quantity
-        InsertPackageField(DATABASE::Item, 5413, 18); // Safety Stock Quantity
+        InsertPackageField(DATABASE::Item, 11, 8);    // Inventory Posting Group
+        InsertPackageField(DATABASE::Item, 21, 9);    // Costing Method
+        InsertPackageField(DATABASE::Item, 31, 10);   // Vendor No.
+        InsertPackageField(DATABASE::Item, 32, 11);   // Vendor Item No.
+        InsertPackageField(DATABASE::Item, 91, 12);   // Gen. Prod. Posting Group
+        InsertPackageField(DATABASE::Item, 99, 13);   // VAT Prod. Posting Group
+        InsertPackageField(DATABASE::Item, 105, 14);  // Global Dimension 1 Code
+        InsertPackageField(DATABASE::Item, 106, 15);  // Global Dimension 2 Code
+        InsertPackageField(DATABASE::Item, 5425, 16); // Sales Unit of Measure
+        InsertPackageField(DATABASE::Item, 5426, 17); // Purch. Unit of Measure
+        InsertPackageField(DATABASE::Item, 5702, 18); // Item Category Code
+        InsertPackageField(DATABASE::Item, 5704, 19); // Product Group Code
     end;
 
     local procedure InsertPackageTableBankAccount(var DataMigrationSetup: Record "Data Migration Setup")
@@ -310,17 +323,20 @@ codeunit 70140953 "Alfa Excel Data Migrator"
         InsertPackageField(DATABASE::"Bank Account", 2, 2);     // Name
         InsertPackageField(DATABASE::"Bank Account", 3, 3);     // Search Name
         InsertPackageField(DATABASE::"Bank Account", 5, 4);     // Address
-        InsertPackageField(DATABASE::"Bank Account", 7, 5);     // City
-        InsertPackageField(DATABASE::"Bank Account", 91, 6);    // Post Code
-        InsertPackageField(DATABASE::"Bank Account", 35, 7);    // Country/Region Code
-        InsertPackageField(DATABASE::"Bank Account", 8, 8);     // Contact
-        InsertPackageField(DATABASE::"Bank Account", 9, 9);    // Phone No.
-        InsertPackageField(DATABASE::"Bank Account", 102, 10);  // E-Mail
-        InsertPackageField(DATABASE::"Bank Account", 101, 11);  // Bank Branch No
-        InsertPackageField(DATABASE::"Bank Account", 13, 12);  // Bank Account No
-        InsertPackageField(DATABASE::"Bank Account", 110, 13);  // IBAN
-        InsertPackageField(DATABASE::"Bank Account", 22, 14);  // Currency
-        InsertPackageField(DATABASE::"Bank Account", 21, 15);  // Posting Group
+        InsertPackageField(DATABASE::"Bank Account", 6, 5);     // Address 2
+        InsertPackageField(DATABASE::"Bank Account", 7, 6);     // City
+        InsertPackageField(DATABASE::"Bank Account", 91, 7);    // Post Code
+        InsertPackageField(DATABASE::"Bank Account", 35, 8);    // Country/Region Code
+        InsertPackageField(DATABASE::"Bank Account", 8, 9);     // Contact
+        InsertPackageField(DATABASE::"Bank Account", 9, 10);    // Phone No.
+        InsertPackageField(DATABASE::"Bank Account", 102, 11);  // E-Mail
+        InsertPackageField(DATABASE::"Bank Account", 101, 12);  // Bank Branch No
+        InsertPackageField(DATABASE::"Bank Account", 13, 13);   // Bank Account No
+        InsertPackageField(DATABASE::"Bank Account", 110, 14);  // IBAN
+        InsertPackageField(DATABASE::"Bank Account", 22, 15);   // Currency
+        InsertPackageField(DATABASE::"Bank Account", 21, 16);   // Bank Acc. Posting Group
+        InsertPackageField(DATABASE::"Bank Account", 16, 17);   // Global Dimension 1 Code
+        InsertPackageField(DATABASE::"Bank Account", 17, 18);   // Global Dimension 2 Code 
     end;
 
     local procedure InsertPackageTableFixedAsset(var DataMigrationSetup: Record "Data Migration Setup")

@@ -8,34 +8,27 @@ codeunit 70140951 "Alfa Assisted Setup"
         AssistedSetup: Record "Assisted Setup";
         lStatus: Integer;
     begin
-        /*TempAggregatedAssistedSetup.AddExtensionAssistedSetup(
-                                    Page::"Alfa Company Setup Wizard"
-                                    , 'Alfa Company Setup'
-                                    , true
-                                    , AlfaConfigSetup.RecordId()
-                                    , GetCompanyInformationSetupStatus(TempAggregatedAssistedSetup)
-                                    , '');*/
-        /*IF AssistedSetup.Get(Page::"Alfa Company Setup Wizard") THEN
+        IF AssistedSetup.Get(Page::"Alfa Company Setup Wizard") THEN
             lStatus := AssistedSetup.GetStatus(Page::"Alfa Company Setup Wizard")
         ELse
-            lStatus := 0;*/
+            lStatus := 0;
         TempAggregatedAssistedSetup.AddExtensionAssistedSetup(
                                     Page::"Alfa Company Setup Wizard"
                                     , 'Alfa Company Setup'
                                     , true
                                     , AlfaConfigSetup.RecordId()
-                                    , AssistedSetup.GetStatus(Page::"Alfa Company Setup Wizard")
+                                    , lStatus
                                     , '');
-        /*IF AssistedSetup.Get(Page::"Alfa Data Migration Wizard") THEN
+        IF AssistedSetup.Get(Page::"Alfa Data Migration Wizard") THEN
             lStatus := AssistedSetup.GetStatus(Page::"Alfa Data Migration Wizard")
         ELse
-            lStatus := 0;*/
+            lStatus := 0;
         TempAggregatedAssistedSetup.AddExtensionAssistedSetup(
                                     Page::"Alfa Data Migration Wizard"
                                     , 'Alfa Data Migration'
                                     , true
                                     , AlfaConfigSetup.RecordId()
-                                    , AssistedSetup.GetStatus(Page::"Alfa Data Migration Wizard")
+                                    , lStatus
                                     , '');
     end;
 

@@ -1,0 +1,24 @@
+{
+  "id": "352ae797-adec-43bf-987c-47e83942f4e9",
+  "name": "Auto Company Setup Configuration",
+  "publisher": "Alfazance",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "13.0.0.0",
+  "application": "13.0.0.0",
+  "idRange": {
+    "from": 70140921,
+    "to": 70141920
+  },
+  "runtime": "2.0",
+  "target":"Internal"
+}
